@@ -21,6 +21,7 @@
 #
 
 require 'lorcon-ffi/typedefs'
+require 'lorcon-ffi/driver'
 
 require 'ffi'
 
@@ -31,5 +32,21 @@ module FFI
     ffi_lib 'liborcon'
 
     attach_function :lorcon_get_version, [], :uint
+    attach_function :lorcon_list_drivers, [], :pointer
+    attach_function :lorcon_find_driver, [:string], :pointer
+    attach_function :lorcon_auto_driver, [:string], :pointer
+    attach_function :lorcon_free_driver_list, [:pointer], :void
+
+    def Lorcon.list_drivers
+      Driver.new(Lorcon.lorcon_list_drivers)
+    end
+
+    def Lorcon.find_driver(name)
+      Driver.new(Lorcon.lorcon_find_driver(name))
+    end
+
+    def Lorcon.default_driver(name)
+      Driver.new(Lorcon.lorcon_auto_driver(name))
+    end
   end
 end

@@ -27,6 +27,7 @@ require 'ffi'
 module FFI
   module Lorcon
     class Driver < FFI::Struct
+
       layout :name, :string,
              :details, :string,
              :init_func, :lorcon_driver_init,
@@ -46,6 +47,7 @@ module FFI
       end
 
       alias to_s name
+
     end
   end
 end

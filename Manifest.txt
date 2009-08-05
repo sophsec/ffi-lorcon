@@ -3,6 +3,9 @@ Manifest.txt
 Rakefile
 README.txt
 lib/lorcon-ffi.rb
+lib/lorcon-ffi/extensions.rb
+lib/lorcon-ffi/extensions/ffi.rb
+lib/lorcon-ffi/extensions/ffi/types.rb
 lib/lorcon-ffi/typedefs.rb
 lib/lorcon-ffi/version.rb
 lib/lorcon-ffi/ffi.rb

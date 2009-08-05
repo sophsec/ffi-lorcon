@@ -32,10 +32,45 @@ module FFI
     ffi_lib 'liborcon'
 
     attach_function :lorcon_get_version, [], :uint
+
     attach_function :lorcon_list_drivers, [], :pointer
     attach_function :lorcon_find_driver, [:string], :pointer
     attach_function :lorcon_auto_driver, [:string], :pointer
     attach_function :lorcon_free_driver_list, [:pointer], :void
+
+    attach_function :lorcon_create, [:string, :pointer], :pointer
+    attach_function :lorcon_free, [:pointer], :void
+
+    attach_function :lorcon_open_inject, [:pointer], :int
+    attach_function :lorcon_open_monitor, [:pointer], :int
+    attach_function :lorcon_open_injmon, [:pointer], :int
+
+    attach_function :lorcon_set_vap, [:pointer, :string], :void
+    attach_function :lorcon_get_vap, [:pointer], :string
+    attach_function :lorcon_get_capiface, [:pointer], :string
+    attach_function :lorcon_get_driver_name, [:pointer], :string
+
+    attach_function :lorcon_close, [:pointer], :void
+
+    # TODO: Missing functions
+    #attach_function :lorcon_get_datalink, [:pointer], :int
+    #attach_function :lorcon_set_datalink, [:pointer, :int], :int
+    #
+    #attach_function :lorcon_set_channel, [:pointer, :int], :int
+    #attach_function :lorcon_get_channel, [:pointer], :int
+    #
+    #attach_function :lorcon_get_pcap, [:pointer], :pointer
+
+    attach_function :lorcon_get_selectable_fd, [:pointer], :int
+    attach_function :lorcon_next_ex, [:pointer, :pointer], :int
+    attach_function :lorcon_set_filter, [:pointer, :string], :int
+    attach_function :lorcon_loop, [:pointer, :int, :lorcon_handler, :pointer], :int
+    attach_function :lorcon_dispatch, [:pointer, :int, :lorcon_handler, :pointer], :int
+    attach_function :lorcon_breakloop, [:pointer], :void
+    attach_function :lorcon_inject, [:pointer, :pointer], :int
+    attach_function :lorcon_send_bytes, [:pointer, :int, :pointer], :int
+
+    attach_function :lorcon_add_wepkey, [:pointer, :pointer, :pointer, :int], :int
 
     def Lorcon.list_drivers
       Driver.new(Lorcon.lorcon_list_drivers)

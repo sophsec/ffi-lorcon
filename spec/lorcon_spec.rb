@@ -27,7 +27,7 @@ describe Lorcon do
   end
 
   it "should provide a default driver for the interface" do
-    driver = Lorcon.default_driver(ENV['IFACE'])
+    driver = Lorcon.default_driver(IFACE)
 
     driver.should_not be_nil
     driver.name.should_not be_empty

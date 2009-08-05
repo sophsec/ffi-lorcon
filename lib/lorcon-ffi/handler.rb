@@ -29,6 +29,8 @@ module FFI
   module Lorcon
     class Handler < FFI::Struct
 
+      STATUS_MAX = 1024
+
       MAX_IFNAME_LEN = 32
 
       layout :driver_name, [:char, MAX_IFNAME_LEN],
@@ -41,7 +43,7 @@ module FFI
              :packets_recv, :int,
              :dlt, :int,
              :channel, :int,
-             :error_str, STATUS_MAX,
+             :errstr, [:char, STATUS_MAX],
              :original_mac, [Types::UINT8, 6],
              :auxptr, :pointer,
              :handler_callback, :lorcon_handler,

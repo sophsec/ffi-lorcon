@@ -30,6 +30,6 @@ module FFI
 
     ffi_lib 'liborcon'
 
-    attach_function :tx80211_getversion, [], :string
+    attach_function :tx80211_getversion, [], :uint
   end
 end

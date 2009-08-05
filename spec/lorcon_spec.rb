@@ -9,6 +9,6 @@ describe Lorcon do
   end
 
   it "should have an internal LORCON version" do
-    Lorcon.tx80211_getversion.should_not == 0
+    Lorcon.lorcon_get_version.should_not == 0
   end
 end

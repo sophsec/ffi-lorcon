@@ -1,0 +1,11 @@
+History.txt
+Manifest.txt
+Rakefile
+README.txt
+lib/lorcon-ffi.rb
+lib/lorcon-ffi/typedefs.rb
+lib/lorcon-ffi/version.rb
+lib/lorcon-ffi/ffi.rb
+spec/spec_helper.rb
+spec/lorcon_spec.rb
+tasks/spec.rb

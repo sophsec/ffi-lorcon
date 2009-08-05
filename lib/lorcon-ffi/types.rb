@@ -24,7 +24,7 @@ require 'ffi'
 
 module FFI
   module Lorcon
-    extend FF::Library
+    extend FFI::Library
 
     callback :lorcon_driver_init, [:pointer], :int
     callback :lorcon_driver_probe, [:string], :int

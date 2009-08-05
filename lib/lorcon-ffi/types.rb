@@ -26,6 +26,23 @@ module FFI
   module Lorcon
     extend FFI::Library
 
+    callback :lorcon_handler, [:pointer, :pointer, :pointer], :void
+
+    callback :lorcon_close, [:pointer], :int
+
+    callback :lorcon_open_inject, [:pointer], :int
+    callback :lorcon_open_monitor, [:pointer], :int
+    callback :lorcon_open_inject_monitor, [:pointer], :int
+
+    callback :lorcon_set_channel, [:pointer, :int], :int
+    callback :lorcon_get_channel, [:pointer], :int
+
+    callback :lorcon_send_packet, [:pointer, :pointer], :int
+    callback :lorcon_get_packet, [:pointer, :pointer], :int
+
+    callback :lorcon_set_dlt, [:pointer, :int], :int
+    callback :lorcon_get_dlt, [:pointer], :int
+
     callback :lorcon_driver_init, [:pointer], :int
     callback :lorcon_driver_probe, [:string], :int
   end

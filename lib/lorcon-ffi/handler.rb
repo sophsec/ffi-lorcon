@@ -20,6 +20,7 @@
 #++
 #
 
+require 'lorcon-ffi/wep'
 require 'lorcon-ffi/types'
 
 require 'ffi'
@@ -56,6 +57,10 @@ module FFI
              :set_dlt_callback, :lorcon_set_dlt,
              :get_dlt_callback, :lorcon_get_dlt,
              :wep_keys, :pointer
+
+      def wep_keys
+        WEP.new(self[:wep_keys])
+      end
 
     end
   end

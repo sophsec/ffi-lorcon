@@ -14,6 +14,10 @@ module FFI
         @driver
       end
 
+      def empty?
+        (@driver.nil? || @driver.null?)
+      end
+
       def each(&block)
         current_driver = @driver
 

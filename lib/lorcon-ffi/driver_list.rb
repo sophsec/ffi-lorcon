@@ -37,7 +37,7 @@ module FFI
       end
 
       def empty?
-        (@driver.nil? || @driver.null?)
+        @driver.nil?
       end
 
       def each(&block)

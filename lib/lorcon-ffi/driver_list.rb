@@ -15,9 +15,14 @@ module FFI
       end
 
       def each(&block)
-        while (next_driver = @driver.next)
-          block.call(next_driver)
+        currnet_driver = @driver
+
+        while current_driver
+          block.call(current_driver)
+          current_driver = current_driver.next
         end
+
+        return self
       end
 
     end

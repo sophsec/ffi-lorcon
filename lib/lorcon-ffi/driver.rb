@@ -28,8 +28,6 @@ module FFI
   module Lorcon
     class Driver < FFI::Struct
 
-      include Enumerable
-
       layout :name, :string,
              :details, :string,
              :init_func, :lorcon_driver_init,

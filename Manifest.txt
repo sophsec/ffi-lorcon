@@ -9,6 +9,7 @@ lib/lorcon-ffi/extensions/ffi/types.rb
 lib/lorcon-ffi/typedefs.rb
 lib/lorcon-ffi/types.rb
 lib/lorcon-ffi/driver.rb
+lib/lorcon-ffi/driver_list.rb
 lib/lorcon-ffi/wep.rb
 lib/lorcon-ffi/handler.rb
 lib/lorcon-ffi/version.rb

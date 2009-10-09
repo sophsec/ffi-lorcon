@@ -21,8 +21,6 @@
 #
 
 require 'lorcon-ffi/typedefs'
-require 'lorcon-ffi/driver'
-require 'lorcon-ffi/driver_list'
 
 require 'ffi'
 
@@ -72,17 +70,5 @@ module FFI
     attach_function :lorcon_send_bytes, [:pointer, :int, :pointer], :int
 
     attach_function :lorcon_add_wepkey, [:pointer, :pointer, :pointer, :int], :int
-
-    def Lorcon.list_drivers
-      DriverList.new(Driver.new(Lorcon.lorcon_list_drivers))
-    end
-
-    def Lorcon.find_driver(name)
-      Driver.new(Lorcon.lorcon_find_driver(name))
-    end
-
-    def Lorcon.default_driver(name)
-      Driver.new(Lorcon.lorcon_auto_driver(name))
-    end
   end
 end

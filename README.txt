@@ -1,7 +1,7 @@
 = lorcon-ffi
 
 * http://github.com/sophsec/lorcon-ffi/
-* Postmodern (postmodern at sophsec.com)
+* Postmodern (postmodern.mod3 at gmail.com)
 
 == DESCRIPTION:
 
@@ -19,7 +19,7 @@ Ruby FFI bindings for liborcon.
 
 lorcon-ffi - Ruby FFI bindings for liborcon.
 
-Copyright (c) 2009 Postmodern (postmodern at sophsec.com)
+Copyright (c) 2009 Postmodern (postmodern.mod3 at gmail.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

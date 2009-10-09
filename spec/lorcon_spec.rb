@@ -22,7 +22,6 @@ describe Lorcon do
     driver = Lorcon.find_driver('mac80211')
 
     driver.should_not be_nil
-    driver.should_not be_null
     driver.name.should == 'mac80211'
   end
 
@@ -30,7 +29,6 @@ describe Lorcon do
     driver = Lorcon.default_driver(IFACE)
 
     driver.should_not be_nil
-    driver.should_not be_null
     driver.name.should_not be_empty
   end
 end

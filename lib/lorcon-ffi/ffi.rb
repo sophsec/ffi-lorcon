@@ -21,6 +21,7 @@
 #
 
 require 'lorcon-ffi/typedefs'
+require 'lorcon-ffi/types'
 
 require 'ffi'
 

@@ -1,6 +1,6 @@
-= lorcon-ffi
+= ffi-lorcon
 
-* http://github.com/sophsec/lorcon-ffi/
+* http://github.com/sophsec/ffi-lorcon/
 * Postmodern (postmodern.mod3 at gmail.com)
 
 == DESCRIPTION:
@@ -13,11 +13,11 @@ Ruby FFI bindings for liborcon.
 
 == INSTALL:
 
-  $ sudo gem install lorcon-ffi
+  $ sudo gem install ffi-lorcon
 
 == LICENSE:
 
-lorcon-ffi - Ruby FFI bindings for liborcon.
+ffi-lorcon - Ruby FFI bindings for liborcon.
 
 Copyright (c) 2009 Postmodern (postmodern.mod3 at gmail.com)
 

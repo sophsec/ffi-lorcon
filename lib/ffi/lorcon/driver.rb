@@ -20,22 +20,36 @@
 #++
 #
 
-require 'lorcon-ffi/ffi'
-require 'lorcon-ffi/driver'
-require 'lorcon-ffi/driver_list'
+require 'ffi/lorcon/types'
+
+require 'ffi'
 
 module FFI
   module Lorcon
-    def Lorcon.list_drivers
-      DriverList.new(Driver.new(Lorcon.lorcon_list_drivers))
-    end
+    class Driver < FFI::Struct
 
-    def Lorcon.find_driver(name)
-      Driver.new(Lorcon.lorcon_find_driver(name))
-    end
+      layout :name, :string,
+             :details, :string,
+             :init_func, :lorcon_driver_init,
+             :probe_func, :lorcon_driver_probe,
+             :next, :pointer
 
-    def Lorcon.default_driver(name)
-      Driver.new(Lorcon.lorcon_auto_driver(name))
+      def name
+        self[:name]
+      end
+
+      def details
+        self[:details]
+      end
+
+      def next
+        unless self[:next].null?
+          Driver.new(self[:next])
+        end
+      end
+
+      alias to_s name
+
     end
   end
 end

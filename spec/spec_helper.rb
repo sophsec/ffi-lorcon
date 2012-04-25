@@ -1,12 +1,13 @@
 require 'rubygems'
-gem 'rspec', '>=1.1.12'
+
+gem 'rspec', '~> 2.4'
 require 'spec'
 
-require 'lorcon-ffi/version'
+require 'ffi/lorcon/version'
 
 include FFI
 include FFI::Lorcon
 
 unless (IFACE = ENV['IFACE'])
-  STDERR.puts "Warning: you must specify the IFACE environment variable"
+  warn "Warning: you must specify the IFACE environment variable"
 end

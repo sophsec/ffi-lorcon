@@ -20,7 +20,7 @@
 #++
 #
 
-require 'lorcon-ffi/driver'
+require 'ffi/lorcon/driver'
 
 module FFI
   module Lorcon

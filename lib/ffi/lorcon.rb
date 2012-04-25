@@ -2,7 +2,7 @@
 #--
 # lorcon-ffi - Ruby FFI bindings for liborcon.
 #
-# Copyright (c) 2009 Postmodern (postmodern at sophsec.com)
+# Copyright (c) 2009 Postmodern (postmodern.mod3 at gmail.com)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,11 +20,5 @@
 #++
 #
 
-require 'rubygems'
-require 'ffi'
-
-module FFI
-  def self.alias_type(type,aliased)
-    add_typedef(find_type(type),aliased.to_sym)
-  end
-end
+require 'ffi/lorcon/ffi'
+require 'ffi/lorcon/version'

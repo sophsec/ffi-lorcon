@@ -20,35 +20,36 @@
 #++
 #
 
-require 'lorcon-ffi/types'
-
-require 'ffi'
+require 'ffi/lorcon/wep'
 
 module FFI
   module Lorcon
-    class Driver < FFI::Struct
+    class WepKeys
 
-      layout :name, :string,
-             :details, :string,
-             :init_func, :lorcon_driver_init,
-             :probe_func, :lorcon_driver_probe,
-             :next, :pointer
+      include Enumerable
 
-      def name
-        self[:name]
+      def initialize(key)
+        @key = key
       end
 
-      def details
-        self[:details]
+      def first
+        @key
       end
 
-      def next
-        unless self[:next].null?
-          Driver.new(self[:next])
+      def empty?
+        @key.nil?
+      end
+
+      def each(&block)
+        current = @key
+
+        while current
+          block.call(current)
+          current = current.next
         end
-      end
 
-      alias to_s name
+        return self
+      end
 
     end
   end

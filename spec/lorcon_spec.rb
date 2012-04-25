@@ -1,5 +1,5 @@
-require 'lorcon-ffi/lorcon'
-require 'lorcon-ffi/version'
+require 'ffi/lorcon/lorcon'
+require 'ffi/lorcon/version'
 
 require 'spec_helper'
 

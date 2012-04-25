@@ -20,9 +20,9 @@
 #++
 #
 
-require 'lorcon-ffi/wep'
-require 'lorcon-ffi/types'
-require 'lorcon-ffi/ffi'
+require 'ffi/lorcon/wep'
+require 'ffi/lorcon/types'
+require 'ffi/lorcon/lorcon'
 
 require 'ffi'
 
@@ -66,7 +66,9 @@ module FFI
       end
 
       def wep_keys
-        WEP.new(self[:wep_keys])
+        unless self[:wep_keys].null?
+          WEPKeys.new(Wep.new(self[:wep_keys]))
+        end
       end
 
     end

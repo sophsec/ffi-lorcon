@@ -69,16 +69,16 @@ module FFI
     attach_function :lorcon_send_bytes, [:pointer, :int, :pointer], :int
 
     attach_function :lorcon_add_wepkey, [:pointer, :pointer, :pointer, :int], :int
-    def Lorcon.list_drivers
-      DriverList.new(Driver.new(Lorcon.lorcon_list_drivers))
+    def self.list_drivers
+      DriverList.new(Driver.new(lorcon_list_drivers))
     end
 
-    def Lorcon.find_driver(name)
-      Driver.new(Lorcon.lorcon_find_driver(name))
+    def self.find_driver(name)
+      Driver.new(lorcon_find_driver(name))
     end
 
-    def Lorcon.default_driver(name)
-      Driver.new(Lorcon.lorcon_auto_driver(name))
+    def self.default_driver(name)
+      Driver.new(lorcon_auto_driver(name))
     end
   end
 end

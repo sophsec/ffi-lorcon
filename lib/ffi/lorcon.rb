@@ -20,5 +20,5 @@
 #++
 #
 
-require 'ffi/lorcon/ffi'
+require 'ffi/lorcon/lorcon'
 require 'ffi/lorcon/version'

@@ -18,32 +18,30 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'ffi/lorcon/driver'
-
 module FFI
   module Lorcon
-    class DriverList
+    class LinkedList
 
       include Enumerable
 
-      def initialize(first_driver)
-        @driver = first_driver
-      end
+      attr_reader :first
 
-      def first
-        @driver
+      def initialize(first)
+        @first = first
       end
 
       def empty?
-        @driver.nil?
+        @first.null?
       end
 
-      def each(&block)
-        current_driver = @driver
+      def each
+        return enum_for(__method__) unless block_given?
 
-        while current_driver
-          block.call(current_driver)
-          current_driver = current_driver.next
+        current = @first
+
+        while current
+          yield current
+          current = current.next
         end
 
         return self

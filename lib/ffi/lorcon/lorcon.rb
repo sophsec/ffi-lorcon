@@ -19,7 +19,7 @@
 #
 
 require 'ffi/lorcon/driver'
-require 'ffi/lorcon/driver_list'
+require 'ffi/lorcon/linked_list'
 
 module FFI
   module Lorcon
@@ -68,7 +68,7 @@ module FFI
 
     attach_function :lorcon_add_wepkey, [:pointer, :pointer, :pointer, :int], :int
     def self.list_drivers
-      DriverList.new(Driver.new(lorcon_list_drivers))
+      LinkedList.new(Driver.new(lorcon_list_drivers))
     end
 
     def self.find_driver(name)

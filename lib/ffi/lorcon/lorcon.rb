@@ -27,7 +27,7 @@ module FFI
   module Lorcon
     extend FFI::Library
 
-    ffi_lib 'liborcon2'
+    ffi_lib 'orcon'
 
     attach_function :lorcon_get_version, [], :uint
 

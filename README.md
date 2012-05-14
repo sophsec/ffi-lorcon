@@ -12,6 +12,11 @@ ruby FFI bindings for liborcon.
 
 ## Examples
 
+## Requirements
+
+* [liborcon](http://code.google.com/p/lorcon/) >= 2.0.0
+* [ffi](https://github.com/ffi/ffi#readme) ~> 1.0
+
 ## Install
 
     $ gem install ffi-lorcon

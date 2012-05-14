@@ -6,7 +6,7 @@
 
 ## Description
 
-ruby FFI bindings for liborcon.
+ruby FFI bindings for Lorcon.
 
 ## Features
 
@@ -14,7 +14,7 @@ ruby FFI bindings for liborcon.
 
 ## Requirements
 
-* [liborcon](http://code.google.com/p/lorcon/) >= 2.0.0
+* [Lorcon](http://code.google.com/p/lorcon/) >= 2.0.0
 * [ffi](https://github.com/ffi/ffi#readme) ~> 1.0
 
 ## Install
